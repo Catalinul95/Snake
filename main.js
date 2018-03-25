@@ -74,7 +74,7 @@ window.onload = function () {
     const head = this.body[this.body.length - 1];
 
     // check collision with edge and with another part of the snake body
-    if (head[0] > 23 || head[1] > 23 || tilemap[head[0]][head[1]] == SNAKE_TILE) {
+    if (head[0] > 23 || head[1] > 23 || head[0] < 0 || head[1] < 0 || tilemap[head[0]][head[1]] == SNAKE_TILE) {
       isRunning = false;
     } else {
 
@@ -101,9 +101,9 @@ window.onload = function () {
 
     if (tilemap[col][row] != 0) {
       generateFood();
+    } else {
+      tilemap[col][row] = FOOD_TILE;
     }
-
-    tilemap[col][row] = FOOD_TILE;
   }
 
   // update maxTicks ( snake moves faster)
