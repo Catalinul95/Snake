@@ -1,3 +1,5 @@
+'use strict';
+
 window.onload = function () {
   // game related constants
   const SNAKE_COLOR = '#ff3838';
